@@ -11,6 +11,14 @@
         <section class="spesialisasi pad-tb-100">
             <div class="container">
                 <div class="row mb-md-2">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2 style="display: inline-block;">Hasil Pencarian "Dokter Umum"</h2>
+                            <h5>Menampilkan 10 hasil pencarian</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-md-2">
                     <div class="col-md-6 col-lg-4">
                         <div class="card shadow-sm border-light mb-4">
                             <a href="#" class="position-relative">
@@ -33,6 +41,7 @@
                             </div>
                         </div>                
                     </div>
+                </div>
             </div>
         </section>
         <footer class="footer">
