@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Rapid Test</h5>
                                         <p class="card-text">Pemeriksaan Covid-19 dengan metode Rapid Test</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <a href="#" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Rapid Test</h5>
                                         <p class="card-text">Pemeriksaan Covid-19 dengan metode Rapid Test</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <a href="#" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Rapid Test</h5>
                                         <p class="card-text">Pemeriksaan Covid-19 dengan metode Rapid Test</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <a href="#" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>
                             </div>
