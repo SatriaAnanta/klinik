@@ -19,11 +19,12 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <h2 style="display: inline-block;">Hasil Pencarian "Dokter Umum"</h2>
-                            <h5>Menampilkan 10 hasil pencarian</h5>
+                            <h5>Menampilkan 6 hasil pencarian</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-md-2">
+                    @for ($i = 0; $i < 6; $i++)
                     <div class="col-md-6 col-lg-4">
                         <div class="card shadow-sm border-light mb-4">
                             <a href="#" class="position-relative">
@@ -46,6 +47,7 @@
                             </div>
                         </div>                
                     </div>
+                    @endfor
                 </div>
             </div>
         </section>
