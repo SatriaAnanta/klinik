@@ -22,5 +22,14 @@ class SpecialtiesSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('specialties')->insert([
+            'title' => 'Dokter Umum',
+            'description' => 'Dokter umum merupakan tenaga medis',
+            'img' => 'tes.jpg',
+            'slug' => 'dokter-sakit',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }
