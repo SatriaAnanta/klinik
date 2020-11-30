@@ -38,7 +38,7 @@
                         <div class="description text-center">
                             <p>{{$doctor->bio}}</p>
                         </div>
-                        <button type="button" role="button"  class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> BUAT JANJI </button>
+                        <a type="button" role="button"  class="btn btn-primary" href="https://api.whatsapp.com/send?phone=6285725656722"> BUAT JANJI </a>
                     </div>
                 </div>
 

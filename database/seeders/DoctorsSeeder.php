@@ -25,5 +25,29 @@ class DoctorsSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'dr. Asep',
+            'bio' => 'Dokter Asep merupakan tenaga medis',
+            'img' => 'tes.jpg',
+            'slug' => 'dr-asep',
+            'experience' => 1,
+            'specialty_id' => 1,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'dr. Lulung',
+            'bio' => 'Dokter Asep merupakan tenaga medis',
+            'img' => 'tes.jpg',
+            'slug' => 'dr-lulung',
+            'experience' => 1,
+            'specialty_id' => 1,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }
