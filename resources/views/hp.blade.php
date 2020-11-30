@@ -43,8 +43,8 @@
                                 <div class="card">
                                     <img class="card-img-top" src="https://images.unsplash.com/photo-1513002433973-e0a181372d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">Rapid Test</h5>
-                                        <p class="card-text">Pemeriksaan Covid-19 dengan metode Rapid Test</p>
+                                        <h5 class="card-title">{{ $specialty->title }}</h5>
+                                        <p class="card-text">{{ $specialty->description }}</p>
                                         <a href="#" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>

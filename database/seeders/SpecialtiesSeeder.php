@@ -18,6 +18,7 @@ class SpecialtiesSeeder extends Seeder
             'title' => 'Dokter Umum',
             'description' => 'Dokter umum merupakan tenaga medis',
             'img' => 'tes.jpg',
+            'slug' => 'dokter-umum',
             'created_at' => now(),
             'updated_at' => now()
         ]);

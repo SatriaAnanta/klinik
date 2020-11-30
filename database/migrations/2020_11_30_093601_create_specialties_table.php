@@ -18,6 +18,7 @@ class CreateSpecialtiesTable extends Migration
             $table->timestamps();
             $table->text('title');
             $table->text('description');
+            $table->string('slug')->unique();
             $table->text('img');
         });
     }

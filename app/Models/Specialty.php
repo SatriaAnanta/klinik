@@ -13,5 +13,6 @@ class Specialty extends Model
         'title',
         'description',
         'img',
+        'slug',
     ];
 }
