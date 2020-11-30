@@ -28,6 +28,9 @@ Route::get('/dokter', function () {
 Route::get('/dokter/profile', function () {
     return view('profileDoctor');
 });
+
+Route::get('/tes', 'App\Http\Controllers\SpecialtyController@index');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
