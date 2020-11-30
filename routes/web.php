@@ -30,6 +30,7 @@ Route::get('/dokter/profile', function () {
 });
 
 Route::get('/tes', 'App\Http\Controllers\SpecialtyController@index');
+Route::get('/tos', 'App\Http\Controllers\DoctorController@index');
 
 Auth::routes();
 

@@ -9,6 +9,6 @@ class SpecialtyController extends Controller
 {
     public function index(Specialty $model)
     {
-        return view('hp', ['specialties' => $model->paginate(6)]);
+        return view('homePage', ['specialties' => $model->paginate(6)]);
     }
 }
