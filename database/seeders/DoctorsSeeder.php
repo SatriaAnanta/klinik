@@ -16,7 +16,7 @@ class DoctorsSeeder extends Seeder
     {
         DB::table('doctors')->insert([
             'name' => 'dr.PlaceHolder',
-            'bio' => 'Dokter umum merupakan tenaga medis',
+            'bio' => 'Dokter PlaceHolder merupakan tenaga medis PlaceHolder',
             'img' => 'tes.jpg',
             'slug' => 'dr-placeHolder',
             'experience' => 1,

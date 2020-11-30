@@ -26,7 +26,15 @@ class DoctorController extends Controller
         //$doctors = Doctor::where('specialty_id', $idSpesialis->id)->get();
         //dd($doctors);
         //$user = Doctor::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-        return view('browseDoctor',['doctors' => $doctors]);
+        return view('browseDoctor',['doctors' => $doctors, 'spesialis' => $idSpesialis]);
 
     }
+
+    public function profile($slug)
+    {
+        $doctors = Doctor::where('slug', $slug)->first();
+        return view('profileDoctor',['doctor' => $doctors]);
+
+    }
+
 }

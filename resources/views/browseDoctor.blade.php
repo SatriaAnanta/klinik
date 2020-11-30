@@ -18,19 +18,26 @@
                 <div class="row mb-md-2">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h2 style="display: inline-block;">Hasil Pencarian "Dokter Umum"</h2>
-                            <h5>Menampilkan 6 hasil pencarian</h5>
+                        @if(isset($doctors))
+                            <h2 style="display: inline-block;">Hasil Pencarian "{{  $spesialis->title  }}"</h2>
+                            <h5>Menampilkan {{$doctors->count()}} hasil pencarian</h5>
+                        @else
+                            <h2 style="display: inline-block;">Hasil Pencarian Tidak Ditemukan"</h2>
+                            <h5>Menampilkan 0 hasil pencarian</h5>
+                        @endif
                         </div>
+                        
                     </div>
                 </div>
                 <div class="row mb-md-2">
+                @if(isset($doctors))
                     @foreach ($doctors as $doctor)
                         <div class="col-md-6 col-lg-4">
                             <div class="card shadow-sm border-light mb-4">
-                                <a href="#" class="position-relative">
+                                <a href="{{ URL('/dokter/profil/'.$doctor->slug )}}" class="position-relative">
                                     <img src="https://via.placeholder.com/500x350/5fa9f8/ffffff" class="card-img-top" alt="image"> </a>
                                 <div class="card-body">
-                                    <a href="#">
+                                    <a href="{{ URL('/dokter/profil/'.$doctor->slug )}}">
                                         <h5 class="font-weight-normal">{{ $doctor->name }}</h5>
                                     </a>
                                     <div class="post-meta"><span class="small lh-120">{{ $doctor->specialty->title }}</span></div>
@@ -48,6 +55,7 @@
                             </div>                
                         </div>
                     @endforeach
+                @endif
                 </div>
             </div>
         </section>

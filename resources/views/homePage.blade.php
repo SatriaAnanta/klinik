@@ -45,7 +45,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $specialty->title }}</h5>
                                         <p class="card-text">{{ $specialty->description }}</p>
-                                        <a href="dokter/spesialis/{{ $specialty->slug }}" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
+                                        <a href="{{ URL('dokter/spesialis/'.$specialty->slug )}}" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>
                             </div>
