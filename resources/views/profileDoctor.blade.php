@@ -38,6 +38,7 @@
                         <div class="description text-center">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem autem quaerat eaque nemo provident illo facere similique consectetur vel obcaecati ab impedit, cum quae, ea aliquam dignissimos architecto fugit!</p>
                         </div>
+                        <button type="button" role="button"  class="btn btn-primary"> BUAT JANJI </button>
                     </div>
                 </div>
             </div>
