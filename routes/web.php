@@ -17,20 +17,20 @@ Route::get('/a', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('homePage');
-});
+// Route::get('/', function () {
+//     return view('homePage');
+// });
 
-Route::get('/dokter', function () {
-    return view('browseDoctor');
-});
+// Route::get('/dokter', function () {
+//     return view('browseDoctor');
+// });
 
 Route::get('/dokter/profile', function () {
     return view('profileDoctor');
 });
 
-Route::get('/tes', 'App\Http\Controllers\SpecialtyController@index');
-Route::get('/tos', 'App\Http\Controllers\DoctorController@index');
+Route::get('/', 'App\Http\Controllers\SpecialtyController@index');
+Route::get('/dokter', 'App\Http\Controllers\DoctorController@index');
 
 Auth::routes();
 
