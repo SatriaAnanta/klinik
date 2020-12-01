@@ -25,6 +25,36 @@
                 </div>
             </div>
         </section>
+        <section class="zona pad-tb-100">
+            <div class="container">
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>Hai, Hardianto</h2>
+                            <span class="border">
+                                11:11 WIB, Kel. Sardonoharjo, Ngaglik, Yogyakarta
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding: 20px 10px">
+                    <div class="col-lg-12">
+                        <h3>Anda berada di zona hijau</h3>
+                    </div>
+                    <div class="col-lg-6 border" style="padding: 20px">
+                        <span>
+                            Zona hijau adalah area atau kelurahan yang belum terdata ada orang yang terinfeksi COVID-19
+                        </span>
+                        <span style="position: absolute; bottom: 10px; left: 20px">
+                            <a href="#">Pelajari lebih lanjut</a>
+                        </span>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1513002433973-e0a181372d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="spesialisasi pad-tb-100">
             <div class="container">
                 <div class="row" style="margin-bottom: 50px;">
