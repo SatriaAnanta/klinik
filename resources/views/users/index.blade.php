@@ -148,7 +148,7 @@
                       <p>{{ __('RTL Support') }}</p>
                     </a>
                   </li>
-                  <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
+                  <li class="nav-item active-pro">
                     <a class="nav-link text-white bg-danger" href="{{ route('upgrade') }}">
                       <i class="material-icons text-white">unarchive</i>
                       <p>{{ __('Upgrade to PRO') }}</p>
@@ -235,7 +235,7 @@
               <p class="card-category"> Here you can manage users</p>
             </div>
             <div class="card-body">
-                              <div class="row">
+                <div class="row">
                 <div class="col-12 text-right">
                   <a href="#" class="btn btn-sm btn-primary">Add user</a>
                 </div>

@@ -34,7 +34,7 @@ Route::get('/dokter', 'App\Http\Controllers\DoctorController@index');
 Route::get('/dokter/spesialis/{slug}', 'App\Http\Controllers\DoctorController@specialty');
 Route::get('/dokter/profil/{slug}', 'App\Http\Controllers\DoctorController@profile');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
@@ -73,6 +73,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+	Route::get('doctor-management', ['as' => 'doctor.index', 'uses' => 'App\Http\Controllers\DoctorController@doctorManagement']);
+	Route::get('specialty-management', ['as' => 'specialty.index', 'uses' => 'App\Http\Controllers\SpecialtyController@specialtyManagement']);
+	Route::get('add-specialty', ['as' => 'specialty.add', 'uses' => 'App\Http\Controllers\SpecialtyController@add']);
+	Route::put('add-specialty', ['as' => 'specialty.insert', 'uses' => 'App\Http\Controllers\SpecialtyController@insert']);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);

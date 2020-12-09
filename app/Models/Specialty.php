@@ -20,4 +20,8 @@ class Specialty extends Model
         'img',
         'slug',
     ];
+
+    protected $attributes = [
+        'img' => 'default.jpg',
+    ];
 }

@@ -35,4 +35,9 @@ class DoctorController extends Controller
 
     }
 
+    public function doctorManagement(Doctor $model)
+    {
+        return view('doctor.index', ['doctors' => $model->paginate(15)]);
+    }
+
 }
