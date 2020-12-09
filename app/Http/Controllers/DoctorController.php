@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Specialty;
+use App\Http\Requests\DoctorRequest;
 use Illuminate\Support\Facades\DB;
 
 class DoctorController extends Controller
@@ -38,6 +39,49 @@ class DoctorController extends Controller
     public function doctorManagement(Doctor $model)
     {
         return view('doctor.index', ['doctors' => $model->paginate(15)]);
+    }
+
+    public function delete($id)
+    {
+        $doctor = Doctor::findOrFail($id);
+        $doctor->delete();
+        return back()->withStatus(__('Specialty Successfully Deleted'));
+    }
+
+    public function edit($id)
+    {
+        $doctor = Doctor::findOrFail($id);
+        $specialty = Specialty::all();
+        return view('doctor.edit',['doctor' => $doctor,'specialties' => $specialty]);
+    }
+
+    public function update(Request $request)
+    {
+        $input = $request->all();
+        //dd($input);
+        $request->validate([
+            'slug' => 'required|unique:specialties,slug,'.$input["id"].',id',
+            'name' => ['required', 'min:3'],
+            'bio' => ['required', 'min:3'],
+         ]);
+        $input = $request->all();
+        Doctor::findOrFail($input["id"])->update($input); 
+
+        return redirect('doctor-management')->withStatus(__('Doctor Successfully Updated'));
+    }
+
+    public function add()
+    {
+        $specialty = Specialty::all();
+        return view('doctor.add',['specialties' => $specialty]);
+    }
+
+    public function insert(DoctorRequest $request)
+    {
+        $specialty = new Doctor;   
+        $specialty->create($request->all());
+
+        return redirect('doctor-management')->withStatus(__('Doctor Successfully Added'));
     }
 
 }

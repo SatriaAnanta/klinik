@@ -19,6 +19,13 @@ class Doctor extends Model
         'specialty_id',
     ];
 
+    protected $attributes = [
+        'img' => 'default.jpg',
+        'experience' => 1,
+        'cost' => 50000,
+        
+    ];
+
     // public function specialty()
     // {
     //     return $this->belongsTo('App\Models\Specialty','specialty_id');

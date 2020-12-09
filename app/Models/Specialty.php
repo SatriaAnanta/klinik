@@ -9,10 +9,10 @@ class Specialty extends Model
 {
     use HasFactory;
 
-    // public function doctor()
-    // {
-    //     return $this->hasMany('App\Models\Doctor');
-    // }
+     public function doctor()
+     {
+         return $this->hasMany('App\Models\Doctor');
+     }
 
     protected $fillable = [
         'title',

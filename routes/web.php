@@ -74,11 +74,26 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('doctor-management', ['as' => 'doctor.index', 'uses' => 'App\Http\Controllers\DoctorController@doctorManagement']);
+	Route::delete('delete-doctor/{id}', ['as' => 'doctor.delete', 'uses' => 'App\Http\Controllers\DoctorController@delete']);
+
+	Route::get('add-doctor', ['as' => 'doctor.add', 'uses' => 'App\Http\Controllers\DoctorController@add']);
+	Route::put('add-doctor', ['as' => 'doctor.insert', 'uses' => 'App\Http\Controllers\DoctorController@insert']);
+
+	Route::get('edit-doctor/{id}', ['as' => 'doctor.edit', 'uses' => 'App\Http\Controllers\DoctorController@edit']);
+	Route::put('edit-doctor', ['as' => 'doctor.update', 'uses' => 'App\Http\Controllers\DoctorController@update']);
+
 	Route::get('specialty-management', ['as' => 'specialty.index', 'uses' => 'App\Http\Controllers\SpecialtyController@specialtyManagement']);
+	Route::delete('delete-specialty/{id}', ['as' => 'specialty.delete', 'uses' => 'App\Http\Controllers\SpecialtyController@delete']);
+
 	Route::get('add-specialty', ['as' => 'specialty.add', 'uses' => 'App\Http\Controllers\SpecialtyController@add']);
 	Route::put('add-specialty', ['as' => 'specialty.insert', 'uses' => 'App\Http\Controllers\SpecialtyController@insert']);
+
+	Route::get('edit-specialty/{id}', ['as' => 'specialty.edit', 'uses' => 'App\Http\Controllers\SpecialtyController@edit']);
+	Route::put('edit-specialty', ['as' => 'specialty.update', 'uses' => 'App\Http\Controllers\SpecialtyController@update']);
+
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
+
 
