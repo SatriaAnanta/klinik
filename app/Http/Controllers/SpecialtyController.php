@@ -30,7 +30,7 @@ class SpecialtyController extends Controller
 
     public function update(Request $request,Specialty $model)
     {
-        $input = $request->all();
+        //$input = $request->all();
         $request->validate([
             'slug' => 'required|unique:specialties,slug,'.$input["id"].',id',
             'title' => ['required', 'min:3'],

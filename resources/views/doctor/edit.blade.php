@@ -46,6 +46,9 @@
                                                 <option value="{{ $specialty->id }}" {{ ( $specialty->id == $doctor->specialty->id ?? '' ?? '') ? 'selected' : '' }}>{{ $specialty->title }}</option>
                                             @endforeach
                                         </select>
+                                        @if ($errors->has('specialty_id'))
+                                            <span id="specialty_id-error" class="error text-danger" for="input-specialty_id">{{ $errors->first('specialty_id') }}</span>
+                                        @endif
                                     </div>
                                 </div>                                
                                 <div class="row">

@@ -94,6 +94,15 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+
+	Route::get('patient-management', ['as' => 'patient.index', 'uses' => 'App\Http\Controllers\PatientController@patientManagement']);
+	Route::delete('patient-specialty/{id}', ['as' => 'patient.delete', 'uses' => 'App\Http\Controllers\PatientController@delete']);
+
+	Route::get('add-patient', ['as' => 'patient.add', 'uses' => 'App\Http\Controllers\PatientController@add']);
+	Route::put('add-patient', ['as' => 'patient.insert', 'uses' => 'App\Http\Controllers\PatientController@insert']);
+
+	Route::get('edit-patient/{id}', ['as' => 'patient.edit', 'uses' => 'App\Http\Controllers\PatientController@edit']);
+	Route::put('edit-patient', ['as' => 'patient.update', 'uses' => 'App\Http\Controllers\PatientController@update']);
 });
 
 

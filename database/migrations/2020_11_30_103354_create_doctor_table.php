@@ -37,3 +37,8 @@ class CreateDoctorTable extends Migration
         Schema::dropIfExists('doctors');
     }
 }
+
+// php artisan make:migration create_patients_table
+// php artisan make:model Patient
+// php artisan make:controller PatientController
+// php artisan make:seeder PatientsSeeder

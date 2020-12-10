@@ -65,6 +65,30 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item {{ ($activePage == 'patient-management' || $activePage == 'apointment-management') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#laravelPatient" aria-expanded="true">
+          <i class="material-icons">sick</i>
+          <p>{{ __('Patient') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse {{ ($activePage == 'patient-management' || $activePage == 'apointment-management') ? ' show' : '' }}" id="laravelPatient">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'patient-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('patient.index') }}">
+                <span class="sidebar-mini"> PM </span>
+                <span class="sidebar-normal">{{ __('Patient Management') }} </span>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'apointment-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('specialty.index') }}">
+                <span class="sidebar-mini"> AM </span>
+                <span class="sidebar-normal"> {{ __('Apointment Management') }} </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>      
       <!-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>

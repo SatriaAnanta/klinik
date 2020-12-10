@@ -1,17 +1,17 @@
-@extends('layouts.app', ['activePage' => 'add-doctor', 'titlePage' => __('Add Doctor')])
+@extends('layouts.app', ['activePage' => 'add-patient', 'titlePage' => __('Add Patient')])
 
 @section('content')
     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" action="{{ route('doctor.insert') }}" autocomplete="off" class="form-horizontal">
+                    <form method="post" action="{{ route('patient.insert') }}" autocomplete="off" class="form-horizontal">
                         @csrf
                         @method('put')
                         <div class="card ">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">{{ __('Add Doctor') }}</h4>
-                                <p class="card-category">{{ __('Doctor information') }}</p>
+                                <h4 class="card-title">{{ __('Add Patient') }}</h4>
+                                <p class="card-category">{{ __('Patient information') }}</p>
                             </div>
                             <div class="card-body ">
                                 @if (session('status'))
@@ -38,40 +38,39 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-sm-2 col-form-label">{{ __('Specialty') }}</label>
+                                    <label class="col-sm-2 col-form-label">{{ __('Gender') }}</label>
                                     <div class="col-sm-7">
-                                        <select class="form-control{{ $errors->has('specialty_id') ? ' is-invalid' : '' }}" name="specialty_id" id="input-specialty_id">
-                                            @foreach($specialties as $specialty)
-                                                <option value="{{ $specialty->id }}">{{ $specialty->title }}</option>
-                                            @endforeach
+                                        <select class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" id="input-gender">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
-                                        @if ($errors->has('specialty_id'))
-                                            <span id="specialty_id-error" class="error text-danger" for="input-specialty_id">{{ $errors->first('specialty_id') }}</span>
+                                        @if ($errors->has('gender'))
+                                            <span id="gender-error" class="error text-danger" for="input-gender">{{ $errors->first('gender') }}</span>
                                         @endif
                                     </div>
-                                </div>  
+                                </div> 
                                 <div class="row">
-                                    <label class="col-sm-2 col-form-label">{{ __('Bio') }}</label>
+                                    <label class="col-sm-2 col-form-label">{{ __('Date of Birth') }}</label>
                                     <div class="col-sm-7">
-                                        <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('bio') ? ' is-invalid' : '' }}" name="bio" id="input-bio" type="text" placeholder="{{ __('Bio') }}"  required="true" aria-required="true"/>
-                                            @if ($errors->has('bio'))
-                                                <span id="bio-error" class="error text-danger" for="input-bio">{{ $errors->first('bio') }}</span>
+                                        <div class="form-group{{ $errors->has('dob') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" id="input-dob" type="date" placeholder="{{ __('Date of Birth') }}"  required="true" aria-required="true"/>
+                                            @if ($errors->has('dob'))
+                                                <span id="dob-error" class="error text-danger" for="input-dob">{{ $errors->first('dob') }}</span>
                                             @endif
                                         </div>
                                     </div>
-                                </div>
+                                </div>                                                                   
                                 <div class="row">
-                                    <label class="col-sm-2 col-form-label">{{ __('Slug') }}</label>
+                                    <label class="col-sm-2 col-form-label">{{ __('Phone Number') }}</label>
                                     <div class="col-sm-7">
-                                        <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" name="slug" id="input-slug" type="text" placeholder="{{ __('Slug') }}"  required="true" aria-required="true"/>
-                                            @if ($errors->has('slug'))
-                                                <span id="slug-error" class="error text-danger" for="input-slug">{{ $errors->first('slug') }}</span>
+                                        <div class="form-group{{ $errors->has('phone_number') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" id="input-phone_number" type="text" placeholder="{{ __('Phone Number') }}"  required="true" aria-required="true"/>
+                                            @if ($errors->has('phone_number'))
+                                                <span id="phone_number-error" class="error text-danger" for="input-phone_number">{{ $errors->first('phone_number') }}</span>
                                             @endif
                                         </div>
                                     </div>
-                                </div>                                  
+                                </div>                                
                             </div>
                             <div class="card-footer ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
