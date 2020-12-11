@@ -30,6 +30,7 @@ class DoctorRequest extends FormRequest
             'bio' => ['required', 'min:3'],
             'specialty_id' => ['required'],
             'slug' => ['required','unique:specialties', 'min:3'],
+            'img' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ];
     }
 }

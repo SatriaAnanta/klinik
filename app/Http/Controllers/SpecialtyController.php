@@ -30,13 +30,20 @@ class SpecialtyController extends Controller
 
     public function update(Request $request,Specialty $model)
     {
-        //$input = $request->all();
+        $input = $request->all();
         $request->validate([
             'slug' => 'required|unique:specialties,slug,'.$input["id"].',id',
             'title' => ['required', 'min:3'],
             'description' => ['required', 'min:3'],
+            'img' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
          ]);
-        $input = $request->all();
+         $input = $request->all();
+         if (isset($request->img)) {
+            $imageName = time().'.'.$request->img->extension();  
+            $request->img->move(public_path('specialty'), $imageName);
+            $input["img"] = $imageName;
+        }
+        
         Specialty::findOrFail($input["id"])->update($input); 
 
         return redirect('specialty-management')->withStatus(__('Specialty Successfully Updated'));
@@ -58,8 +65,14 @@ class SpecialtyController extends Controller
 
     public function insert(SpecialtyRequest $request)
     {
-        $specialty = new Specialty;   
-        $specialty->create($request->all());
+        $specialty = new Specialty; 
+        $input = $request->all();
+        if (isset($request->img)) {
+            $imageName = time().'.'.$request->img->extension();  
+            $request->img->move(public_path('specialty'), $imageName);
+            $input["img"] = $imageName;
+        }
+        $specialty->create($input);
 
         //return back()->withStatus(__('Specialty Successfully Added'));
         return redirect('specialty-management')->withStatus(__('Specialty Successfully Added'));

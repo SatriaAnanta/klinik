@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" action="{{ route('specialty.update') }}" autocomplete="off" class="form-horizontal">
+                    <form method="post" action="{{ route('specialty.update') }}" autocomplete="off" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <input hidden="true" name="id" id="input-id" type="number"  value="{{ old('id', $specialty->id) }}" required="true" aria-required="true"/>
@@ -59,7 +59,19 @@
                                             @endif
                                         </div>
                                     </div>
-                                </div>                                  
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">{{ __('Image') }}</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group{{ $errors->has('img') ? ' has-danger' : '' }}">
+                                        <img class="card-img-top" src="{{ asset('specialty/' . $specialty->img) }}" style="margin-bottom:20px;">
+                                            <input class="form-control{{ $errors->has('img') ? ' is-invalid' : '' }}" name="img" id="input-img" type="file" placeholder="{{ __('Image') }}" style="position: initial; opacity:1" value="{{ old('img', $specialty->img) }}"/>
+                                            @if ($errors->has('img'))
+                                                <span id="img-error" class="error text-danger" for="input-img">{{ $errors->first('img') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>                                   
                             </div>
                             <div class="card-footer ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>

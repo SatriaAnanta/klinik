@@ -58,13 +58,18 @@ class DoctorController extends Controller
     public function update(Request $request)
     {
         $input = $request->all();
-        //dd($input);
         $request->validate([
             'slug' => 'required|unique:specialties,slug,'.$input["id"].',id',
             'name' => ['required', 'min:3'],
             'bio' => ['required', 'min:3'],
+            'img' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
          ]);
         $input = $request->all();
+        if (isset($request->img)) {
+            $imageName = time().'.'.$request->img->extension();  
+            $request->img->move(public_path('doctor'), $imageName);
+            $input["img"] = $imageName;
+        }
         Doctor::findOrFail($input["id"])->update($input); 
 
         return redirect('doctor-management')->withStatus(__('Doctor Successfully Updated'));
@@ -78,8 +83,14 @@ class DoctorController extends Controller
 
     public function insert(DoctorRequest $request)
     {
-        $specialty = new Doctor;   
-        $specialty->create($request->all());
+        $specialty = new Doctor;
+        $input = $request->all();
+        if (isset($request->img)) {
+            $imageName = time().'.'.$request->img->extension();  
+            $request->img->move(public_path('doctor'), $imageName);
+            $input["img"] = $imageName;
+        }   
+        $specialty->create($input);
 
         return redirect('doctor-management')->withStatus(__('Doctor Successfully Added'));
     }

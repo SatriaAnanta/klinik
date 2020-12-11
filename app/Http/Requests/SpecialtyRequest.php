@@ -29,6 +29,8 @@ class SpecialtyRequest extends FormRequest
             'title' => ['required', 'min:3'],
             'description' => ['required', 'min:3'],
             'slug' => ['required','unique:specialties', 'min:3'],
+            'img' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

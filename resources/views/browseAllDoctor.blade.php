@@ -32,7 +32,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="card shadow-sm border-light mb-4">
                                 <a href="{{ URL('/dokter/profil/'.$doctor->slug )}}" class="position-relative">
-                                    <img src="https://via.placeholder.com/500x350/5fa9f8/ffffff" class="card-img-top" alt="image"> </a>
+                                    <img src="{{ asset('doctor/' . $doctor->img) }}" class="card-img-top" alt="image"> </a>
                                 <div class="card-body">
                                     <a href="{{ URL('/dokter/profil/'.$doctor->slug )}}">
                                         <h5 class="font-weight-normal">{{ $doctor->name }}</h5>
