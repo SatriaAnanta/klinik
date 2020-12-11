@@ -2,6 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('includes.head')
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     </head>
     <body>
         <header>
@@ -16,10 +19,7 @@
                             <p>Cari dan temukan dokter dengan langkah mudah</p>
                         </div>
                         <div class="hero-form">
-                            <form action="#">
-                                <input type="text" placeholder="ex: Spesialisasi atau Nama Dokter">
-                                <button type="submit" class="site-btn">Search</button>
-                            </form>
+                            <select class="livesearch form-control" name="livesearch" id="livesearch"></select>
                         </div>
                     </div>
                 </div>
@@ -92,4 +92,30 @@
             @include('includes.footer')
         </footer>
     </body>
+    <script type="text/javascript">
+        $('#livesearch').select2({
+            placeholder: 'Search Spesialis',
+            ajax: {
+                url: '/ajax-autocomplete-search',
+                dataType: 'json',
+                delay: 250,
+                processResults: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                text: item.title,
+                                id: item.slug
+                            }
+                        })
+                    };
+                },
+                cache: true
+            }
+        });
+        $("#livesearch").on("select2:select", function(e) {
+            var data = e.params.data;
+            data.id;
+            window.location.href = 'dokter/spesialis/' +  data.id;
+        });
+    </script>
 <html>

@@ -12,17 +12,17 @@ class DoctorController extends Controller
 {
     public function index(Doctor $model)
     {
-        return view('browseAllDoctor', ['doctors' => $model->paginate(6)]);
+        return view('browseAllDoctor', ['doctors' => $model->paginate(9)]);
     }
-
+    // $users = User::where('votes', '>', 100)->paginate(15);
     public function specialty($slug)
     {
         $idSpesialis = Specialty::where('slug', $slug)->first();
         if(isset($idSpesialis)){
-            $doctors = Doctor::where('specialty_id', $idSpesialis->id)->get();
+            $doctors = Doctor::where('specialty_id', $idSpesialis->id)->paginate(9);
         }
         else{
-            $doctors = Doctor::where('specialty_id', 2)->get();
+            $doctors = Doctor::where('specialty_id', 2)->paginate(9);
         }
 
         return view('browseDoctor',['doctors' => $doctors, 'spesialis' => $idSpesialis]);

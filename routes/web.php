@@ -30,6 +30,7 @@ Route::get('/dokter/profile', function () {
 });
 
 Route::get('/', 'App\Http\Controllers\SpecialtyController@index');
+Route::get('/ajax-autocomplete-search', 'App\Http\Controllers\SpecialtyController@selectSearch');
 Route::get('/dokter', 'App\Http\Controllers\DoctorController@index');
 Route::get('/dokter/spesialis/{slug}', 'App\Http\Controllers\DoctorController@specialty');
 Route::get('/dokter/profil/{slug}', 'App\Http\Controllers\DoctorController@profile');

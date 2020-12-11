@@ -13,6 +13,19 @@ class SpecialtyController extends Controller
         return view('homePage', ['specialties' => $model->paginate(6)]);
     }
 
+    public function selectSearch(Request $request)
+    {
+    	$results = [];
+
+        if($request->has('q')){
+            $search = $request->q;
+            $results =Specialty::select("slug", "title")
+            		->where('title', 'LIKE', "%$search%")
+            		->get();
+        }
+        return response()->json($results);
+    }
+
     public function specialtyManagement(Specialty $model)
     {
         return view('specialty.index', ['specialties' => $model->paginate(15)]);

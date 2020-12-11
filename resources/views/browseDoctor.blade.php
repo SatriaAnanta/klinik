@@ -20,7 +20,7 @@
                         <div class="section-title">
                         @if(isset($spesialis))
                             <h2 style="display: inline-block;">Hasil Pencarian "{{  $spesialis->title  }}"</h2>
-                            <h5>Menampilkan {{$doctors->count()}} hasil pencarian</h5>
+                            <h5>Menampilkan {{$doctors->total()}} hasil pencarian</h5>
                         @else
                             <h2 style="display: inline-block;">Hasil Pencarian Tidak Ditemukan</h2>
                             <h5>Menampilkan 0 hasil pencarian</h5>
@@ -56,6 +56,9 @@
                         </div>
                     @endforeach
                 @endif
+                </div>
+                <div class="d-flex justify-content-center">
+                    {!! $doctors->links() !!}
                 </div>
             </div>
         </section>
