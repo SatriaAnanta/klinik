@@ -10,15 +10,13 @@
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Used Space</p>
+              <p class="card-category">Daily Target</p>
               <h3 class="card-title">49/50
-                <small>GB</small>
               </h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons text-danger">warning</i>
-                <a href="#pablo">Get More Space...</a>
+                <i class="material-icons">date_range</i> Last 24 Hours
               </div>
             </div>
           </div>
@@ -30,7 +28,7 @@
                 <i class="material-icons">store</i>
               </div>
               <p class="card-category">Revenue</p>
-              <h3 class="card-title">$34,245</h3>
+              <h3 class="card-title">Rp. 50.000</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -45,12 +43,12 @@
               <div class="card-icon">
                 <i class="material-icons">info_outline</i>
               </div>
-              <p class="card-category">Fixed Issues</p>
-              <h3 class="card-title">75</h3>
+              <p class="card-category">Appointment</p>
+              <h3 class="card-title">10</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+                <i class="material-icons">local_offer</i>Just Updated
               </div>
             </div>
           </div>
@@ -59,9 +57,9 @@
           <div class="card card-stats">
             <div class="card-header card-header-info card-header-icon">
               <div class="card-icon">
-                <i class="fa fa-twitter"></i>
+                <i class="material-icons">sick</i>
               </div>
-              <p class="card-category">Followers</p>
+              <p class="card-category">Patient</p>
               <h3 class="card-title">+245</h3>
             </div>
             <div class="card-footer">
@@ -72,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-success">
@@ -122,9 +120,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <!-- <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
               <div class="nav-tabs-navigation">
@@ -368,45 +366,94 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-warning">
-              <h4 class="card-title">Employees Stats</h4>
-              <p class="card-category">New employees on 15th September, 2016</p>
+              <h4 class="card-title">Appointment</h4>
+              <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
             </div>
             <div class="card-body table-responsive">
               <table class="table table-hover">
                 <thead class="text-warning">
-                  <th>ID</th>
+                  <th>No</th>
                   <th>Name</th>
-                  <th>Salary</th>
-                  <th>Country</th>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Time</th>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Dakota Rice</td>
-                    <td>$36,738</td>
-                    <td>Niger</td>
+                    <td>Dentist Appointment</td>
+                    <td>Patient Zero</td>
+                    <td>dr. Asep</td>
+                    <td>11-12-2020 19:12</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Minerva Hooper</td>
-                    <td>$23,789</td>
-                    <td>Curaçao</td>
+                    <td>Dentist Appointment</td>
+                    <td>Patient Zero</td>
+                    <td>dr. Asep</td>
+                    <td>11-12-2020 19:12</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Sage Rodriguez</td>
-                    <td>$56,142</td>
-                    <td>Netherlands</td>
+                    <td>Dentist Appointment</td>
+                    <td>Patient Zero</td>
+                    <td>dr. Asep</td>
+                    <td>11-12-2020 19:12</td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>Philip Chaney</td>
-                    <td>$38,735</td>
-                    <td>Korea, South</td>
+                    <td>Dentist Appointment</td>
+                    <td>Patient Zero</td>
+                    <td>dr. Asep</td>
+                    <td>11-12-2020 19:12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">Doctor Stats</h4>
+              <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Specialty</th>
+                  <th>Salary</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>dr.Asep</td>
+                    <td>Dokter Umum</td>
+                    <td>Rp.36,738</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>dr.Silva</td>
+                    <td>Dokter Gigi</td>
+                    <td>Rp.23,789</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>dr.Rodriguez</td>
+                    <td>Dokter Umum</td>
+                    <td>Rp.56,142</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>dr.Chaney</td>
+                    <td>Dokter Umum</td>
+                    <td>Rp.38,735</td>
                   </tr>
                 </tbody>
               </table>

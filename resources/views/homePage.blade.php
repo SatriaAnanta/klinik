@@ -61,7 +61,7 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <h2 style="display: inline-block;">Telusuri Berdasarkan Spesialisasi</h2>
-                            <h2 class="float-right">Lihat Semua</h2>
+                            <!-- <h2 class="float-right">Lihat Semua</h2> -->
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
     </body>
     <script type="text/javascript">
         $('#livesearch').select2({
-            placeholder: 'Search Spesialis',
+            placeholder: 'Cari Spesialis',
             ajax: {
                 url: '/ajax-autocomplete-search',
                 dataType: 'json',

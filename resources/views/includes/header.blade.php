@@ -12,8 +12,8 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{{ URL('/') }}">Home</a>
                 <a class="nav-item nav-link" href="{{ URL('/dokter/') }}">Cari Dokter</a>
-                <a class="nav-item nav-link" href="#">Tentang Kami</a>
-                <a class="nav-item nav-link" href="#">Kontak</a>
+                <!-- <a class="nav-item nav-link" href="#">Tentang Kami</a> -->
+                <a class="nav-item nav-link" href="{{ URL('/login/') }}">Admin Login</a>
             </div>
         </div>
     </div>

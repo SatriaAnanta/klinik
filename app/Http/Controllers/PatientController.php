@@ -29,14 +29,13 @@ class PatientController extends Controller
     public function delete($id)
     {
         $patient = Patient::findOrFail($id);
-        $patient->delete();
-        // if ($patient->appointment()->exists())
-        // {
-        //     return back()->withStatus(__('Resource cannot be deleted due to existence of related resources.'));
-        // }
-        // else{
-        //     $patient->delete();
-        // }
+        if ($patient->appointment()->exists())
+        {
+            return back()->withStatus(__('Resource cannot be deleted due to existence of related resources.'));
+        }
+        else{
+            $patient->delete();
+        }
 
         return back()->withStatus(__('Patient Successfully Deleted'));
     }

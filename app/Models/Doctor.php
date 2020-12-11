@@ -23,15 +23,14 @@ class Doctor extends Model
         'img' => 'default.jpg',
         'experience' => 1,
         'cost' => 50000,
-        
     ];
-
-    // public function specialty()
-    // {
-    //     return $this->belongsTo('App\Models\Specialty','specialty_id');
-    // }
 
     public function specialty(){
         return $this->belongsTo(Specialty::class,'specialty_id');
+    }
+    
+    public function appointment()
+    {
+        return $this->hasMany('App\Models\Appointment');
     }
 }

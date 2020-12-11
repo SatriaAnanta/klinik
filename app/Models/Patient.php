@@ -15,4 +15,11 @@ class Patient extends Model
         'phone_number',
         'dob',
     ];
+
+    public function appointment()
+    {
+        return $this->hasMany('App\Models\Appointment');
+    }
+    
+
 }

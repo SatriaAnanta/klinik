@@ -38,7 +38,7 @@ class CreateDoctorTable extends Migration
     }
 }
 
-// php artisan make:migration create_patients_table
-// php artisan make:model Patient
-// php artisan make:controller PatientController
-// php artisan make:seeder PatientsSeeder
+// php artisan make:migration create_appointments_table
+// php artisan make:model Appointment
+// php artisan make:controller AppointmentController
+// php artisan make:seeder AppointmentSeeder

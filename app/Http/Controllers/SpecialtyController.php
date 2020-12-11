@@ -10,7 +10,7 @@ class SpecialtyController extends Controller
 {
     public function index(Specialty $model)
     {
-        return view('homePage', ['specialties' => $model->paginate(6)]);
+        return view('homePage', ['specialties' => $model->paginate(9)]);
     }
 
     public function selectSearch(Request $request)

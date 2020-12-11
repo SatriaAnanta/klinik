@@ -47,7 +47,7 @@
                                         <td>{{ $patient->id  }}</td>
                                         <td>{{ $patient->name }}</td>
                                         <td>{{ $patient->gender }}</td>
-                                        <td>{{ $patient->dob }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($patient->dob)) }}</td>
                                         <td>{{ $patient->phone_number }}</td>
                                         <td class="td-actions text-right">
                                             <form action="{{ route('patient.edit', [$patient->id]) }}" method="get" style="display: inline;">

@@ -14,7 +14,7 @@ class DoctorController extends Controller
     {
         return view('browseAllDoctor', ['doctors' => $model->paginate(9)]);
     }
-    // $users = User::where('votes', '>', 100)->paginate(15);
+
     public function specialty($slug)
     {
         $idSpesialis = Specialty::where('slug', $slug)->first();
@@ -44,8 +44,15 @@ class DoctorController extends Controller
     public function delete($id)
     {
         $doctor = Doctor::findOrFail($id);
-        $doctor->delete();
-        return back()->withStatus(__('Specialty Successfully Deleted'));
+        if ($doctor->appointment()->exists())
+        {
+            return back()->withStatus(__('Resource cannot be deleted due to existence of related resources.'));
+        }
+        else{
+            $doctor->delete();
+        }
+        
+        return back()->withStatus(__('Doctor Successfully Deleted'));
     }
 
     public function edit($id)

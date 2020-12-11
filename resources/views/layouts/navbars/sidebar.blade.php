@@ -80,10 +80,10 @@
                 <span class="sidebar-normal">{{ __('Patient Management') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'apointment-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('specialty.index') }}">
+            <li class="nav-item{{ $activePage == 'appointment-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('appointment.index') }}">
                 <span class="sidebar-mini"> AM </span>
-                <span class="sidebar-normal"> {{ __('Apointment Management') }} </span>
+                <span class="sidebar-normal"> {{ __('Appointment Management') }} </span>
               </a>
             </li>
           </ul>

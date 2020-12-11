@@ -17,13 +17,10 @@ Route::get('/a', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//     return view('homePage');
+// Route::get('/register', function () {
+//     return view('welcome');
 // });
 
-// Route::get('/dokter', function () {
-//     return view('browseDoctor');
-// });
 
 Route::get('/dokter/profile', function () {
     return view('profileDoctor');
@@ -82,6 +79,15 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('edit-doctor/{id}', ['as' => 'doctor.edit', 'uses' => 'App\Http\Controllers\DoctorController@edit']);
 	Route::put('edit-doctor', ['as' => 'doctor.update', 'uses' => 'App\Http\Controllers\DoctorController@update']);
+
+	Route::get('appointment-management', ['as' => 'appointment.index', 'uses' => 'App\Http\Controllers\AppointmentController@appointmentManagement']);
+	Route::delete('delete-appointment/{id}', ['as' => 'appointment.delete', 'uses' => 'App\Http\Controllers\AppointmentController@delete']);
+
+	Route::get('add-appointment', ['as' => 'appointment.add', 'uses' => 'App\Http\Controllers\AppointmentController@add']);
+	Route::put('add-appointment', ['as' => 'appointment.insert', 'uses' => 'App\Http\Controllers\AppointmentController@insert']);
+
+	Route::get('edit-appointment/{id}', ['as' => 'appointment.edit', 'uses' => 'App\Http\Controllers\AppointmentController@edit']);
+	Route::put('edit-appointment', ['as' => 'appointment.update', 'uses' => 'App\Http\Controllers\AppointmentController@update']);
 
 	Route::get('specialty-management', ['as' => 'specialty.index', 'uses' => 'App\Http\Controllers\SpecialtyController@specialtyManagement']);
 	Route::delete('delete-specialty/{id}', ['as' => 'specialty.delete', 'uses' => 'App\Http\Controllers\SpecialtyController@delete']);

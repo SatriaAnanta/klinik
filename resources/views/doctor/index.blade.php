@@ -46,16 +46,16 @@
                                         <td>{{ $doctor->id  }}</td>
                                         <td>{{ $doctor->name }}</td>
                                         <td>{{ $doctor->specialty->title }}</td>
-                                        <td>{{ $doctor->created_at }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($doctor->created_at)) }}</td>
                                         <td class="td-actions text-right">
-                                            <form action="{{ route('doctor.edit', [$doctor->id]) }}" method="get" style="display: inline;">
+                                            <form action="{{ route('doctor.edit', [$doctor->id]) }}" method="get" style="display: inline;" rel="tooltip" data-original-title="Edit">
                                                 @method('get')
                                                 @csrf
                                                 <button type="submit" class="btn btn-success btn-link">
                                                     <i class="material-icons">edit</i>
                                                 </button> 
                                             </form> 
-                                            <form action="{{ route('doctor.delete', [$doctor->id]) }}" method="post" style="display: inline;">
+                                            <form action="{{ route('doctor.delete', [$doctor->id]) }}" method="post" style="display: inline;" rel="tooltip" data-original-title="Delete">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="btn btn-success btn-link">
