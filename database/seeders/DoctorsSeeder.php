@@ -15,11 +15,11 @@ class DoctorsSeeder extends Seeder
     public function run()
     {
         DB::table('doctors')->insert([
-            'name' => 'dr.PlaceHolder',
-            'bio' => 'Dokter PlaceHolder merupakan tenaga medis PlaceHolder',
-            'img' => 'default.jpg',
-            'slug' => 'dr-placeHolder',
-            'experience' => 1,
+            'name' => 'dr. Farah',
+            'bio' => 'Memberikan layanan di bidang kesehatan umum seperti penanganan demam, gangguan lambung, gangguan saluran cerna, dan lain-lain yang masih belum memerlukan bantuan tenaga dokter spesialis.',
+            'img' => 'drfarah.jpg',
+            'slug' => 'dr-farah',
+            'experience' => 5,
             'specialty_id' => 1,
             'cost' => 1500,
             'created_at' => now(),
@@ -27,11 +27,11 @@ class DoctorsSeeder extends Seeder
         ]);
 
         DB::table('doctors')->insert([
-            'name' => 'dr. Asep',
-            'bio' => 'Dokter Asep merupakan tenaga medis',
-            'img' => 'default.jpg',
-            'slug' => 'dr-asep',
-            'experience' => 1,
+            'name' => 'dr. Sylvia',
+            'bio' => 'Memberikan layanan di bidang kesehatan umum seperti penanganan demam, gangguan lambung, gangguan saluran cerna, dan lain-lain yang masih belum memerlukan bantuan tenaga dokter spesialis.',
+            'img' => 'drsylvia.jpg',
+            'slug' => 'dr-sylvia',
+            'experience' => 6,
             'specialty_id' => 1,
             'cost' => 1500,
             'created_at' => now(),
@@ -40,11 +40,59 @@ class DoctorsSeeder extends Seeder
 
         DB::table('doctors')->insert([
             'name' => 'dr. Lulung',
-            'bio' => 'Dokter Asep merupakan tenaga medis',
-            'img' => 'default.jpg',
+            'bio' => 'Memberikan layanan di bidang kesehatan umum seperti penanganan demam, gangguan lambung, gangguan saluran cerna, dan lain-lain yang masih belum memerlukan bantuan tenaga dokter spesialis.',
+            'img' => 'drlulung.jpg',
             'slug' => 'dr-lulung',
             'experience' => 1,
             'specialty_id' => 1,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'dr. Rachel Emteta Anastasya',
+            'bio' => 'drg. Rachel Emteta Anastasya memberikan layanan di bidang kesehatan gigi dan mulut seperti masalah gigi berlubang, susunan gigi yang tidak beraturan, pertumbuhan gigi bungsu yang bermasalah, gusi bengkak, serta adanya mucocele pada rongga mulut, dan lain-lain.',
+            'img' => 'drrachel.jpg',
+            'slug' => 'dr-rachel',
+            'experience' => 7,
+            'specialty_id' => 2,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'drg. Hernari Esterina , Sp.KG',
+            'bio' => 'drg. Hernari Esterina , Sp.KG memberikan layanan di bidang kesehatan gigi dan mulut seperti masalah gigi berlubang, susunan gigi yang tidak beraturan, pertumbuhan gigi bungsu yang bermasalah, gusi bengkak, serta adanya mucocele pada rongga mulut, dan lain-lain.',
+            'img' => 'drhernari.jpg',
+            'slug' => 'dr-hernari',
+            'experience' => 7,
+            'specialty_id' => 2,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'dr. Ayu, Sp.M',
+            'bio' => 'Memberikan layanan medis meliputi Konsultasi kesehatan terkait penyakit mata.',
+            'img' => 'drayu.jpg',
+            'slug' => 'dr-ayu',
+            'experience' => 5,
+            'specialty_id' => 4,
+            'cost' => 1500,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('doctors')->insert([
+            'name' => 'dr. Andi, Sp.M',
+            'bio' => 'Memberikan layanan medis meliputi Konsultasi kesehatan terkait penyakit mata.',
+            'img' => 'drandi.jpg',
+            'slug' => 'dr-andi',
+            'experience' => 22,
+            'specialty_id' => 4,
             'cost' => 1500,
             'created_at' => now(),
             'updated_at' => now()
@@ -62,16 +110,5 @@ class DoctorsSeeder extends Seeder
         //     'updated_at' => now()
         // ]);
 
-        DB::table('doctors')->insert([
-            'name' => 'dr. Dimas',
-            'bio' => 'Dokter Asep merupakan tenaga medis penanganan covid',
-            'img' => 'default.jpg',
-            'slug' => 'dr-dimas',
-            'experience' => 1,
-            'specialty_id' => 1,
-            'cost' => 1500,
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
     }
 }

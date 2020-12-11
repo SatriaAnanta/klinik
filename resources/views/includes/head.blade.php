@@ -2,6 +2,63 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <style>
+    .specialties-card-img-top {
+        /*height: 11vw;*/
+        object-fit: cover;
+    }
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+        .specialties-card-img-top {
+            height: 19vw;
+        }
+    }
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        .specialties-card-img-top {
+            height: 16vw;
+        }
+    }
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+        .specialties-card-img-top {
+            height: 11vw;
+        }
+    }
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 992px) {
+        .specialties-card-img-top {
+            height: 11vw;
+        }
+    }
+
+    .doctor-card {
+        /*height: 11vw;*/
+        object-fit: cover;
+    }
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+        .doctor-card {
+            height: 19vw;
+        }
+    }
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        .doctor-card {
+            height: 16vw;
+        }
+    }
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+        .doctor-card {
+            height: 18vw;
+        }
+    }
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 992px) {
+        .doctor-card {
+            height: 18vw;
+        }
+    }
     .pad-tb-100{
         padding-top: 100px;
         padding-bottom: 100px;

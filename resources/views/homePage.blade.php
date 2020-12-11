@@ -69,12 +69,15 @@
                     <div class="col-lg-12">
                         <div class=row>
                         @foreach ($specialties as $specialty)
-                            <div class="col-lg-4 col-md-6" style="margin-bottom: 24px;">
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="margin-bottom: 24px;">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ asset('specialty/' . $specialty->img) }}" alt="Card image cap">
+                                    <img class="specialties-card-img-top card-img-top" src="{{ asset('specialty/' . $specialty->img) }}" >
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $specialty->title }}</h5>
-                                        <p class="card-text">{{ $specialty->description }}</p>
+                                        <p class="card-text" style="text-align: justify;">{{ $specialty->description }}</p>
+                                        
+                                    </div>
+                                    <div class="card-footer" style="background-color:unset; border-top:unset;">
                                         <a href="{{ URL('dokter/spesialis/'.$specialty->slug )}}" class="btn btn-primary  btn-block btn-rised  btn-round">Lihat Dokter</a>
                                     </div>
                                 </div>
